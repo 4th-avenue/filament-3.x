@@ -28,8 +28,17 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
+                'danger' => Color::Rose,
+                'gray' => Color::Gray,
+                'info' => Color::Blue,
                 'primary' => Color::Amber,
+                'success' => Color::Emerald,
+                'warning' => Color::Orange,
             ])
+            ->font('Poppins')
+            ->brandName('filament')
+            ->brandLogo(asset('images/logo.png'))
+            ->favicon(asset('images/favicon.ico'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
