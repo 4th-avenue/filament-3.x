@@ -10,10 +10,19 @@ class Country extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'code',
+        'phonecode'
+    ];
 
     public function states(): HasMany
     {
-        $this->hasMany(Country::class);
+        return $this->hasMany(State::class);
+    }
+
+    public function employees(): HasMany
+    {
+        return $this->hasMany(Employee::class);
     }
 }
